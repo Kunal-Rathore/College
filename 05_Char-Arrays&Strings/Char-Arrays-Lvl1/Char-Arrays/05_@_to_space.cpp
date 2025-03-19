@@ -22,7 +22,7 @@ void convert_to_space(char arr[])
 int main() {
  
    char arr[100];    
-   cout<<"Enter string with @- ";
+   cout<<"Enter string with @- ";kk
    cin.getline(arr,100);
 
    convert_to_space(arr);
