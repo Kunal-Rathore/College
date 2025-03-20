@@ -1,0 +1,127 @@
+
+1) Leetcode problem no. 1209 ->  https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/description/
+ 
+2) Value of npos-
+Ans -> In most of systems- 2^64
+Cout<<"Value of npos is- "<<string::npos <<endl;  // which is '2^64'
+
+3) Alg name + time complexity exists to find substr in string and find funtion of string time complexity
+
+Ans ->  Naive Approach(Brute force) -> O(M*N)
+        KMP (Knuth Morris Pratt) -> O(N+M)
+        Rabin Karp -> O(N+M)
+        Suffix tree -> O(N+M)
+        Z algorithm -> O(N+M)
+        Suffix Array (Binary Search) -> O(MlogN)
+        Boyer-Moore -> O(N*M)
+
+The time complexity of find function depends on the type of search 
+but, to find substring in a string -> O(M*N)  (Naive Approach)
+
+
+4) String erase function by self -> Done (04_hw.cpp)
+
+5) Leetcode 539  -> (Below text)
+
+
+
+1) Attempted->
+
+class Solution {
+public:
+
+
+bool checkString (string s, int index, int k)
+{
+      int count = 1;
+      while (count<k)
+      {
+        if ( s[index] != s[index+1])
+        {
+            return false;
+        }
+
+        index++;
+        count++;
+      }
+
+
+return true;
+}
+
+
+    string removeDuplicates(string s, int k) {
+
+        int index = 0;
+
+        while(index < s.length())
+        {
+            if (checkString(s, index, k) == true)
+            {
+                s.erase(index, k);
+                index  = 0;
+            }
+            else{
+            index++;
+        }
+        
+        }
+return s;
+
+        
+    }
+};
+
+
+
+
+5) Solved but need to get info about midnight case and stoi fucntion and about storing differences
+
+
+
+class Solution {
+public:
+    int findMinDifference(vector<string>& timePoints) {
+        
+        vector <int> temp ;
+             int i = 0;
+        while(i < timePoints.size())
+        {
+            string time = timePoints[i]; // stores the string
+
+            int hrs = stoi(time.substr(0,2));  // stores first two characters of string as integer format
+            int mins = stoi(time.substr(3,2));  // stores next two characters of string as integer format after ':'
+            int totalMins = hrs*60 + mins;
+              temp.push_back(totalMins);        // stores the total time from each string in mins format
+       
+             i++;
+        }
+        
+         sort(temp.begin(), temp.end());  // sort the mins so we could find the difference of adjacent easily and can compare
+          
+
+i =0;
+
+vector <int> differenceStoreKaArray;
+               int size = temp.size();
+           while( i+1 < size)
+             {
+                int differencee = temp[i+1] - temp[i];
+
+                 differenceStoreKaArray.push_back(differencee);
+                 i++;
+             }
+
+             // midnight case -> bhai jo bhi last mae hoga (size -1 index pr) temp vale mae voh sabse bada yani before 24 sabse near hoga 24 kee  or jo sabse pehle (0 index) pr hoga voh sabse chota hoga yani after 24 sabse pass hoga so
+              int midNightCase = (24*60 - temp[size-1]) + temp[0];
+
+              differenceStoreKaArray.push_back( midNightCase );
+
+// bs ab ans- (jo sabse chota hae)
+
+int ans = *min_element(differenceStoreKaArray.begin(), differenceStoreKaArray.end());
+
+return ans;
+
+    }
+};
