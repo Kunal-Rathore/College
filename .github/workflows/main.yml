@@ -1,0 +1,30 @@
+name: Auto Commit Changes
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs daily at midnight UTC
+  push:
+    branches:
+      - main  # Also runs when you push changes
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Git
+        run: |
+          git config --global user.name "Your GitHub Username"
+          git config --global user.email "your-email@example.com"
+
+      - name: Commit and push if changes exist
+        run: |
+          git add .
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto-update: $(date '+%Y-%m-%d')"
+            git push
+          else
+            echo "No changes to commit"
+          fi
