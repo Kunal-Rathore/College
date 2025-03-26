@@ -1,30 +1,28 @@
-name: Auto Commit Changes
+name: Auto Push Merge
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Runs daily at midnight UTC
-  push:
-    branches:
-      - main  # Also runs when you push changes
+    - cron: '0 18 * * *'  # Runs daily at 18:00 UTC (11:30 PM IST)
+  workflow_dispatch:   # Allows manual triggering for testing
 
 jobs:
   auto-commit:
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Set up Git
+      - name: Install GitHub CLI
         run: |
-          git config --global user.name "Your GitHub Username"
-          git config --global user.email "your-email@example.com"
+          sudo apt-get update
+          sudo apt-get install -y gh
 
-      - name: Commit and push if changes exist
+      - name: Set Up Git Config
         run: |
-          git add .
-          if ! git diff --cached --quiet; then
-            git commit -m "Auto-update: $(date '+%Y-%m-%d')"
-            git push
-          else
-            echo "No changes to commit"
-          fi
+          git config --global user.name "Kunal-Rathore"
+          git config --global user.email "your-email@example.com"  # Replace with your email
+
+      - name: Run Auto Push Merge Script
+        run: bash ./auto_push_merge.sh
