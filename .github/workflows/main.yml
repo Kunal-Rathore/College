@@ -9,10 +9,13 @@ jobs:
   auto-commit:
     runs-on: ubuntu-latest
     env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_PAT: ${{ secrets.GH_PAT }}  # Use your Personal Access Token (PAT)
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+        with:
+          persist-credentials: false  # Prevents using the default GITHUB_TOKEN
 
       - name: Install GitHub CLI
         run: |
@@ -22,7 +25,14 @@ jobs:
       - name: Set Up Git Config
         run: |
           git config --global user.name "Kunal-Rathore"
-          git config --global user.email "your-email@example.com"  # Replace with your email
+          git config --global user.email "your-email@example.com"  # Replace with your GitHub email
+          git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/Kunal-Rathore/College.git
 
       - name: Run Auto Push Merge Script
         run: bash ./auto_push_merge.sh
+
+      - name: Push Changes
+        run: |
+          git add .
+          git commit -m "Auto commit on $(date)" || echo "No changes to commit"
+          git push origin main
