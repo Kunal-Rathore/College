@@ -1,0 +1,7 @@
+
+Discussed Binary Search + Revise
+ and 
+ Also about the presicion (ans with decimal values) for questions like find sqr and divide the divisor with divident without using / and %
+
+and the code for sqrt with presicion is in Searching_Level-2/ HW/ 01_sqr_with_decimal.cpp
+and the code for divisor with divident is in Searching_Level-3/ HW / 1_quotient_with_decimal.cpp

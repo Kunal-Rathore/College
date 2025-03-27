@@ -1,0 +1,4 @@
+
+1)  Find division of two given no. without using / operator and use binary search 
+along with 3 decimal values and the given no.  may be negative
+

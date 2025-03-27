@@ -1,2 +1,0 @@
-
-1) Find square root of no. and provide the ans upto 3decimal places if it has.
