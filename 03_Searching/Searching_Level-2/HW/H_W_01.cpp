@@ -1,8 +1,6 @@
 //   1) Find square root of no. and provide the ans upto 3 decimal places if it has.
 
-
-
-/* My approach which is correct but not in O(log N) and not even effective
+/* My approach which is correct but not effective
 
 
 #include <iostream>
@@ -21,7 +19,7 @@ float ans1 = ans + mid*place;
 
 float ans2 =ans1;
 
- 
+
     while(start<=end)
     {
        // cout<<ans1<<endl;
@@ -35,7 +33,7 @@ float ans2 =ans1;
        }
        else
        {
-       
+
         ans2 = ans1;
         start = mid+1;
        }
@@ -43,7 +41,7 @@ float ans2 =ans1;
          mid = start+(end-start)/2;
          ans1 = ans+mid*place;
 
-       
+
     }
     return ans2;
 }
@@ -75,13 +73,13 @@ float ans =-1;
 
         mid = start+(end-start);
     }
-    
+
     float place = 1;
 
     for(int i=0; i<3; i++)
     {
         place *= 0.10;
-        
+
         ans = binarySearch(ans,x,place);
     }
 
@@ -99,7 +97,7 @@ int main()
    float ans = findSqrt(x);
 
     cout<<"The square root is- "<<ans<<endl;
-   
+
     return 0;
 }
 

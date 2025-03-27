@@ -1,7 +1,0 @@
-
-
-//01 => modify code of que5 so we don't need the extra if condition to handle the size+1 case. (I did it, in the same qustion)
-//02 => search problem find pivot on gfg or leet code and solve it.
-
-
-//soln of 02->
