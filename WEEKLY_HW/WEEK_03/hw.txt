@@ -1,0 +1,38 @@
+
+
+WEEK 03 ARRAY HW -> 
+
+	1. Re-arrange array elements by sign (Leetcode-2149) -> Done Already in 02_Array_ExtraClass/ que05.cpp
+
+	2. Find Pivot Index (Leetcode-724) ->  Done but time complexity is O(N^2) and Also studied approach of O(N)
+// got to know about accumulate (#include <numeric>) function which is well good to to sum elements    
+
+	3. Find Duplicate Number (Leetcode-287)  -> negation, sorting, 0 index element swapping
+
+	4. Missing Element From An Array With Duplicates (GFG)  -> 1st sorting, 2nd negation
+
+	5. Find First Repeating Element (GFG)  -> Brute force O(n^2) , hashing (not done yet) 
+
+	6. Common Element in 3 Sorted Array (GFG) -> using set container compare all and store
+
+	7. Wave Print A Matrix (GFG) -> brute force check col is even or odd
+
+	8. Spiral Print A Matrix (Leetcode-54) -> Done from youtube
+
+	9. Factorial of A Large Number (GFG)
+
+	10. Key Pair/Two Sum (GFG and Leetcode-1)
+
+	11. Remove Duplicates From Sorted Array (Leetcode-26)
+
+	12. Maximum Average Subarray 1 (Leetcode-643)
+
+	13. Find Pivot Index with prefix sum approach (Leetcode-724)
+
+	14. Missing Number with XOR operator (Leetcode-268)
+
+	15. Add two numbers represented by two array (GFG Solved before Q.No. 9)
+
+
+
+	Date HW started -> 24 March 25 
