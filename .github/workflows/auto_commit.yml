@@ -22,17 +22,14 @@ jobs:
         run: |
           SINCE_DATE=$(date -d "today 00:00" --utc +'%Y-%m-%dT%H:%M:%SZ')
           if git log --since="$SINCE_DATE" --pretty=format:"%h" | grep -q . ; then
-            echo "::set-output name=commit_found::true"
+            echo "commit_found=true" >> "$GITHUB_ENV"
           else
-            echo "::set-output name=commit_found::false"
+            echo "commit_found=false" >> "$GITHUB_ENV"
           fi
 
       - name: Create Auto Commit if None Found
-        if: steps.check_commit.outputs.commit_found == 'false'
+        if: env.commit_found == 'false'
         run: |
           echo "Auto commit on $(date)" >> commit.txt
           git config --local user.name "github-actions[bot]"
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git add commit.txt
-          git commit -m "Auto commit for daily consistency [skip ci]"
-          git push
+          git config --local user.email "github-actions[bot]@users.noreply
