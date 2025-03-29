@@ -2,7 +2,8 @@ name: Auto Commit for Daily Consistency
 
 on:
   schedule:
-    - cron: '0 6 * * *'  # Runs at 06:00 UTC (11:30 IST)
+    - cron: '49 20 * * *'  # Runs at 20:49 UTC (2:19 AM IST)
+
   workflow_dispatch:
 
 jobs:
