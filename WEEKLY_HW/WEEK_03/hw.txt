@@ -1,6 +1,6 @@
 
 
-WEEK 03 ARRAY HW -> 
+WEEK 03 ARRAY HW -> CLASS NOTES 10
 
 	1. Re-arrange array elements by sign (Leetcode-2149) -> Done Already in 02_Array_ExtraClass/ que05.cpp
 
