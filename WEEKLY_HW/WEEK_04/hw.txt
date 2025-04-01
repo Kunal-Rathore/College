@@ -2,8 +2,8 @@
 
 WEEK 04 BINARY SEARCH HW -> CLASS NOTES 13
 
-	1. K-Diff Pairs in An Array (Leetcode-532)
-	2. Find K-Closest Element (Leetcode-658)
+	1. K-Diff Pairs in An Array (Leetcode-532) -> Done using two pointer and binary search both 
+	2. Find K-Closest Element (Leetcode-658) -> Done using two pointer and binary search both
 	3. Exponential Search (Concept)
 	4. Unbounded Binary Search (Concept)
 	5. Book Allocation Problem (GFG & Code studio)
@@ -16,4 +16,4 @@ WEEK 04 BINARY SEARCH HW -> CLASS NOTES 13
 	12. Majority Element (Leetcode-169)
 
 
-	Date HW started -> 31 March 25 , ended on ->
+	Date HW started -> 1 April 25 , ended on ->
