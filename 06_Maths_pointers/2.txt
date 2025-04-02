@@ -1,0 +1,8 @@
+
+GCD / HCF
+
+i) Euclid's algo -> gcd(a,b) = gcd(a-b,b) if a>b
+                 -> gcd(a,b) = gcd(b-a,a) if b>a
+
+ LCM -> (a*b)/ gcd(a,b)                
+                 
