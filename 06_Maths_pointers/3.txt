@@ -1,0 +1,5 @@
+Modulo arithmetic
+
+1) (a+b)%M = a%M + b%M
+
+2) (((a%M)%M)%M) = (a%M)

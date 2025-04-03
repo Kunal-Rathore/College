@@ -1,0 +1,8 @@
+
+Prime No. (lc - 204)
+
+1) Naive approach -> n*n
+2) Sqrt -> n * root n
+3) sieve -> n* loglogn
+4) segmented sieve (range)
+

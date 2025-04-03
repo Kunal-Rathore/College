@@ -1,0 +1,5 @@
+Find a^b
+
+i) Slow Exponential -> a*a*a*a till b times -> O(b)
+
+ii) Fast Exponential -> if b is odd then ans *= a and then b/2 and if b is even then a = a*a
