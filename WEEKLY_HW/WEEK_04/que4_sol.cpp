@@ -2,6 +2,8 @@
 #include <algorithm>
 using namespace std;
 
+//  UNBOUNDED BINARY SEARCH
+
 // Function to perform binary search in a given range
 int binarySearch(vector<int> &arr, int start, int end, int target)
 {
@@ -25,30 +27,28 @@ int binarySearch(vector<int> &arr, int start, int end, int target)
     return -1;
 }
 
+//STEP 1- 
+
 // Function to perform Exponential Search
-int exponentialSearch(vector<int> &arr, int target)
+int unboundedSearch(vector<int> &arr, int target)
 {
 
-    if (arr[0] == target)
+    int i = 0, j = 1;
+    while (j < arr.size() && arr[j] < target)
     {
-        return 0;
-    }
-
-    int i = 1;
-    while (i < arr.size() && arr[i] < target)
-    {
-        i = i * 2; // gives starting and ending index of new search space
+        i = j;   // will be starting index
+        j = j * 2; // gives ending index of new search space
     }
     int size = arr.size();
-    return binarySearch(arr, i / 2, min(size - 1, i), target);
+    return binarySearch(arr, i, min(size - 1, j), target); // min cause if j will goes outofbound cause of j*2.....
 }
 
 int main()
 {
     vector<int> arr = {1, 2, 3, 4, 5, 10, 15, 20, 40, 50}; // Sorted Array
-    int target = 10;
+    int target = 50;
 
-    int index = exponentialSearch(arr, target);
+    int index = unboundedSearch(arr, target);
 
     if (index != -1)
         cout << "Element found at index: " << index << endl;
