@@ -11,7 +11,7 @@ vector<bool> normalSieve(int n)
     // marking 0 and 1 as non prime
     sieve[0] = sieve[1] = false;
 
-    for (int i = 2; i * i<= n; i++)
+    for (int i = 2; i * i <= n; i++)
     {
         if (sieve[i]) // agar sieve of i prime ho toh,
         {
@@ -80,8 +80,7 @@ int main()
 
     vector<bool> isPrime = segmentedSieve(l, r);
 
-
-    for (int i = 0; i < isPrime.size(); i++)
+    for (int i = 0; i <= isPrime.size(); i++)
     {
         if (isPrime[i])
         {
