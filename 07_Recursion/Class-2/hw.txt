@@ -1,0 +1,6 @@
+// for loop fibonacci
+// check 09.cpp about order of printing and recursion calling
+// store digit of n = 4215 in vector
+// having vector in input and give no. in output (opposite of above)
+// babar  <= string and target = a print index of target
+// babar  <= string and target = a store index of target in vector
