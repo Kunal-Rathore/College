@@ -1,5 +1,5 @@
 // for loop fibonacci
-// check 09.cpp about order of printing and recursion calling
+// check 09.cpp about order of printing and recursion calling         -> REASON IS CAUSE IF RECURSION CALL IS STARTING FROM INDEX += 1 MEANS FROM 1TH INDEX
 // store digit of n = 4215 in vector
 // having vector in input and give no. in output (opposite of above)
 // babar  <= string and target = a print index of target

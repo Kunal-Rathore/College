@@ -12,11 +12,15 @@ void solve(int arr[], int target, int index, int size)
     {
         return;
     }
+   
+    
     if(arr[index]== target)
     {
         cout<<index<<" ";
+
     }
     solve(arr, target, ++index, size);
+   
 }
 
 
