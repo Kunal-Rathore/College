@@ -73,5 +73,5 @@ int main()
     int paintersk = 2;
     
     int min_max_time = findMiniMaxTime(house_boards, paintersk);
-cout<<"The minimum max time required is- "<<min_max_time << endl;
+cout<<"The minimum max time required is- "<<min_max_time << endl; 
 } 
