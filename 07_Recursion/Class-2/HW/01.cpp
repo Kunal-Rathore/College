@@ -9,7 +9,7 @@ using namespace std;
 
 int main() {
  
-    int n = 6; // ans is 8
+    int n = 6;
 
     int a = 0;
     int b = 1;
