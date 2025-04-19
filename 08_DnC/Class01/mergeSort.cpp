@@ -7,13 +7,72 @@
 
 using namespace std;
 
+// merge function declaration
+void merge(int arr[], int s, int mid, int e);
+
+
+void mergeSort(int arr[], int s, int e)  // function which divides the array recursively in left and right arrays
+{
+     // base case if there's no element and only one element then no need to further divide them
+     if(s >= e)
+     {
+        return;
+     }
+
+     //calling merge sort after dividing the array by finding mid
+
+     int mid  = s+(e-s)/2;
+     
+     //calling merge sort for left half of array
+     mergeSort( arr, s,mid); 
+
+
+     //calling merge sort for left half of array
+     mergeSort(arr, mid+1, e);
+
+     // now we divided the array so we need to merge them along with sorting 
+     // calling merge function which will sort and merge the array using two subarrays in same arr array
+
+     merge(arr, s, mid,e);
+
+}
+
+int main() {
+ 
+
+    int arr[] = {23,54,90,231,56,78,6};
+    int size  = 7;
+
+    cout<<"Before merge sort- ";
+    for(int i = 0; i< size; i++)
+    {
+        cout<< arr[i]<<" ";
+    }
+
+cout<<endl;
+
+
+    mergeSort(arr,0,size-1);  // calling merge sort with starting and last index
+    
+  cout<<"After merge sort- ";
+for(int i = 0; i< size; i++)
+{
+    cout<< arr[i]<<" ";
+}
+
+    return 0;
+}
+
+
+
+
 
 // merge function to sort and merge the subarrays
 
 void merge(int arr[], int s, int mid, int e)
 {
     // now need to create two arrays one left and second right with size->
-    // for left array size is of s - mid +1.
+    // for left array size is of mid -s +1.
     // and for right array size is of end - (mid+1)+1.
 
     int leftSize = mid - s +1;
@@ -101,60 +160,4 @@ while(rightIndex < rightSize)
 // now we need to delete that array which we created dynamically
 delete [] left;
 delete [] right;
-}
-
-
-
-void mergeSort(int arr[], int s, int e)  // function which divides the array recursively in left and right arrays
-{
-     // base case if there's no element and only one element then no need to further divide them
-     if(s >= e)
-     {
-        return;
-     }
-
-     //calling merge sort after dividing the array by finding mid
-
-     int mid  = s+(e-s)/2;
-     
-     //calling merge sort for left half of array
-     mergeSort( arr, s,mid); 
-
-
-     //calling merge sort for left half of array
-     mergeSort(arr, mid+1, e);
-
-     // now we divided the array so we need to merge them along with sorting 
-     // calling merge function which will sort and merge the array using two subarrays in same arr array
-
-     merge(arr, s, mid,e);
-
-
-}
-
-int main() {
- 
-
-    int arr[] = {23,54,90,231,56,78,6};
-    int size  = 7;
-
-
-    cout<<"Before merge sort- ";
-    for(int i = 0; i< size; i++)
-    {
-        cout<< arr[i]<<" ";
-    }
-cout<<endl;
-
-
-
-  mergeSort(arr,0,size-1);  // calling merge sort with starting and last index
- 
-  cout<<"After merge sort- ";
-for(int i = 0; i< size; i++)
-{
-    cout<< arr[i]<<" ";
-}
-
-    return 0;
 }
