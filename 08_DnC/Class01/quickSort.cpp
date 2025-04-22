@@ -12,6 +12,7 @@ int func(int arr[], int low, int high)
 
     while(i<j)
     {
+    
         while(arr[i]< arr[pivot] && i<j)
         {
             i++;
