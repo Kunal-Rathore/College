@@ -32,7 +32,6 @@ int func(int arr[], int low, int high)
    
     swap(arr[j], arr[pivot]);
    
-
     return j;
 }
 
