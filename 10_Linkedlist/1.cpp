@@ -12,7 +12,7 @@ int data;
 Node *next;
 
         Node(){
-            this->next = 0;
+            this->next = NULL;
             cout<<"in default ctor\n";
         }
 
@@ -21,7 +21,7 @@ Node *next;
             cout<<"in parameterized ctor\n";
         
             this->data = data;
-            this->next = 0;
+            this->next = NULL;
         }
 };
 
@@ -29,7 +29,7 @@ Node *next;
 void printLL(Node *head)
 {
     Node *temp = head;
-    while(temp!= 0)
+    while(temp!= NULL)
     {
         cout<<temp->data<<" -> ";
         temp = temp->next;
@@ -42,7 +42,7 @@ int getLength(Node *head)
 {
     Node *temp = head;
 int length = 0;
-    while(temp!= 0)
+    while(temp!= NULL)
     {
         cout<<temp->data<<" -> ";
         temp = temp->next;
